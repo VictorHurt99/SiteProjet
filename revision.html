@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours à reviser</title>
+    <link rel="stylesheet" href="css/revison.css">
+    <script src="js/revision.js"></script>
+</head>
+<body>
+<fieldset id="ajouterCoursFieldSet">
+    <legend>Ajouter un cours à reviser</legend>
+    <form id="CoursInput">
+        <p><label>Nom du Cours :</label><input type="text" placeholder="Introduire le nom du cours à ajouter" id="NomCours"></p>
+        <p><label>Date de l'examen</label><input type="date" placeholder="jj-mm-aaaa" id="DateCours"></p>
+        <p><label>Importance du cours</label><select id="CoursImportance"><option value ="facile">Facile</option><option value ="moyen">Moyen</option><option value ="dur">Dur</option></select></p>
+        <p><label>Indication</label><textarea placeholder="Indication sur le cours a reviser" id="IndicationCours" rows="5"></textarea></p>
+        <p><input type="button" value="Ajouter Cours" onclick="ajouterCours()"></p> <p> <input type="button" onclick="clearCours()" value="réinitialisation"> </p>
+    </form>
+</fieldset>
+
+<fieldset id="ReviserCoursFieldSet">
+    <legend>Cours à reviser</legend>
+     <form id="TableCours">
+        <p><table id="TableCoursShow">
+            <tr>
+                <td>Cours</td>
+                <td>Date</td>
+                <td>Importance</td>
+            </tr>
+    </table></p>
+    </form>
+    <fieldset id="IndicationFieldSet">
+        <legend>Indication</legend>
+    </fieldset>
+</fieldset>
+
+</body>
+</html>

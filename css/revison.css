@@ -1,0 +1,30 @@
+body{
+    margin: 10px;
+    padding: 10px;
+}
+
+fieldset{
+    background-color: #fdffc3;
+    border-radius: 5px;
+}
+#ajouterCoursFieldSet{
+    width: 50%;
+    max-width: 500px;
+    text-align: left;
+}
+#NomCours{
+    width: 250px;
+}
+#IndicationCours{
+    width: 250px;
+}
+#TableCours{
+    box-sizing: border-box;
+    width: 30%;
+    display: inline-block;
+    float: right;
+    alignment: center;
+    vertical-align: center;
+
+}
+
