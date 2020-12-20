@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang = "fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Cours à reviser</title>
+    <meta charset = "UTF-8">
+    <title>Revision</title>
+    <script src="js/revison.js"></script>
     <link rel="stylesheet" href="css/revison.css">
-    <script src="js/revision.js"></script>
 </head>
 <body>
-<fieldset id="ajouterCoursFieldSet">
-    <legend>Ajouter un cours à reviser</legend>
-    <form id="CoursInput">
-        <p><label>Nom du Cours :</label><input type="text" placeholder="Introduire le nom du cours à ajouter" id="NomCours"></p>
-        <p><label>Date de l'examen</label><input type="date" placeholder="jj-mm-aaaa" id="DateCours"></p>
-        <p><label>Importance du cours</label><select id="CoursImportance"><option value ="facile">Facile</option><option value ="moyen">Moyen</option><option value ="dur">Dur</option></select></p>
-        <p><label>Indication</label><textarea placeholder="Indication sur le cours a reviser" id="IndicationCours" rows="5"></textarea></p>
-        <p><input type="button" value="Ajouter Cours" onclick="ajouterCours()"></p> <p> <input type="button" onclick="clearCours()" value="réinitialisation"> </p>
+
+<fieldset id="userInputFieldSet">
+    <legend><img src="img/book-png.webp"></legend>
+    <form id="userTacheInput">
+        <label>Nom du cours :</label><input type="text" placeholder="introduire le nom du cours" id="tacheName">
+        <label>Date examen : </label><input type="date" placeholder="jj - mm - aaaa" id="tacheDueDate">
+        <label>Difficultée: </label><select id="tacheImportance"> <option value="Dur">Dur</option> <option value="Normal">Normal</option> <option value="Facile">Facile</option> </select>
+        <label>ECTS : </label><input type="number" placeholder="ECTS" id="tacheDuree">
+        <label>Indication : </label><textarea placeholder="Indication sur le cours" id="tacheDescription" rows="10"> </textarea>
+        <p> <input type="button" onclick="createTache()" value="créer la tâche"> </p> <p> <input type="button" onclick="clearTachesList()" value="réinitialisation"> </p>
     </form>
 </fieldset>
 
-<fieldset id="ReviserCoursFieldSet">
-    <legend>Cours à reviser</legend>
-     <form id="TableCours">
-        <p><table id="TableCoursShow">
+<fieldset id="tableTacheFieldSet">
+    <p>
+        <input type="radio" name="OpenOrAll" value="all" checked onchange="tableTachesBuild()"> Touts
+        <input type="radio" name="OpenOrAll" value="open" onchange="tableTachesBuild()"> Ouverts
+    </p>
+    <form id="tableTache">
+        <table id="tableTacheShow">
             <tr>
-                <td>Cours</td>
-                <td>Date</td>
-                <td>Importance</td>
+                <td>Nom du cours</td>
+                <td>Date examen</td>
+                <td>Difficultée</td>
+                <td>ECTS</td>
+                <td>Ouvert</td>
+                <td>Action</td>
             </tr>
-    </table></p>
+        </table>
     </form>
-    <fieldset id="IndicationFieldSet">
+    <fieldset id="descriptionShowFieldSet">
         <legend>Indication</legend>
+        <p id="descriptionShow"> </p>
     </fieldset>
 </fieldset>
 
